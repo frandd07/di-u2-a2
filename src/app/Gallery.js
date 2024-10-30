@@ -1,5 +1,15 @@
 import { getImageUrl } from './utils.js';
 
+//manera 1 de hacerlo
+const persona1 = {
+  name: "Marie Curie" ,
+  imagen:"szV5sdG" ,
+  profesion:"Física y Química" ,
+  nPremios:6 ,
+  premios:"Premio Nobel de Física, Premio Nobel de Química, Medalla Davy, Medalla Matteucci" ,
+  descubrimiento:"polonio (elemento químico)"
+}
+
 function Profile({nombre,imagen,profesion,nPremios,premios,descubrimiento}) {
   return (
     <section className="profile">
@@ -33,8 +43,10 @@ export default function Gallery() {
   return (
     <div>
       <h1>Científicos Notables</h1>
-      <Profile name = "Marie Curie" imagen="szV5sdG" profesion="Física y Química" nPremios="6" premios="Premio Nobel de Física, Premio Nobel de Química, Medalla Davy, Medalla Matteucci" descubrimiento="polonio (elemento químico)"/>
-      <Profile name= "Katsuko Saruhashi" imagen="YfeOqp2" profesion="Geoquímica" nPremios="2" premios="Premio Miyake de geoquímica, Premio Tanaka" descubrimiento="un método para medir el dióxido de carbono en el agua de mar"></Profile>
+      <Profile name = {persona1.name} imagen={persona1.imagen} profesion={persona1.profesion} nPremios={persona1.nPremios} premios={persona1.premios} descubrimiento={persona1.descubrimiento}/>
+      //manera 2 de hacerlo
+      <Profile name= "Katsuko Saruhashi" imagen="YfeOqp2" profesion="Geoquímica" nPremios={2} premios="Premio Miyake de geoquímica, Premio Tanaka" descubrimiento="un método para medir el dióxido de carbono en el agua de mar"></Profile>
+      //manera 3 de hacerlo, meter const en un nuevo js y exportarlo y hacer lo mismo
     </div>
   );
 }
